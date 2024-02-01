@@ -1,19 +1,4 @@
-# hello-webgis
+一个简单的webgis系统,适合初学者
 
-## Project setup
-```
-npm install
-```
+具体可看我的博客：
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
