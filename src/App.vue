@@ -2,9 +2,38 @@
 <el-container>
   <el-header>webgis系统</el-header>
   <el-container>
-    <el-aside width="200px">菜单栏</el-aside>
+    <el-aside width="200px">
+      <p style="background-color: aliceblue; margin-top: 0;  
+  margin-bottom: 0;">菜单栏</p>
+    <el-menu
+      default-active="1"
+      class="el-menu-vertical-demo"
+      @select="handleMenuSelect"
+      @open="handleOpen"
+      @close="handleClose"
+      background-color="#062344"
+      text-color="#fff"
+      active-text-color="#ffd04b">
+      <el-menu-item index="1">
+        <i class="el-icon-location"></i>
+        <span slot="title">导航一</span>
+      </el-menu-item>
+      <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
+        <span slot="title">导航二</span>
+      </el-menu-item>
+      <el-menu-item index="3" disabled>
+        <i class="el-icon-document"></i>
+        <span slot="title">导航三</span>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航四</span>
+      </el-menu-item>
+    </el-menu>
+    </el-aside>
     <el-main>
-      <MapView/>
+      <router-view></router-view>
     </el-main>
   </el-container>
 </el-container>
@@ -14,7 +43,28 @@
 import MapView from "./components/MapView.vue"
 export default {
   name: 'App',
+  data(){
+    return{
+      isCollapse: true
+    }
+  },
   components: {MapView},
+  methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleMenuSelect(index) {
+      console.log(index);
+      if (index === '1') {
+        this.$router.push('/');
+      } else if (index === '2') {
+        this.$router.push('/onemap');
+      }
+    }
+  }
 };
 
 </script>
@@ -32,9 +82,9 @@ export default {
 
   .el-aside {
     background-color: #062344;
-    color: #f8f7f7;
+    color: #062344;
     text-align: center;
-    line-height: 200px;
+    line-height: 60px;
   } 
 
   .el-main {
@@ -42,5 +92,9 @@ export default {
     color: #333;
     text-align: center;
     line-height: 160px;
+  }
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
   }
 </style>

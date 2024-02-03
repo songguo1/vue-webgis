@@ -1,8 +1,8 @@
 <template>
     <div id="mapview"></div>
-  </template>
+</template>
   
-  <script>
+<script>
   import { loadModules } from 'esri-loader';
   const options = {
     url: 'https://js.arcgis.com/4.18/init.js',
@@ -30,12 +30,12 @@
       },
     },
   };
-  </script>
+</script>
   
-  <style>
+<style>
   #mapview {
     position: relative;
     width: 100%;
     height: 100%;
   }
-  </style>
+</style>
