@@ -13,6 +13,7 @@
     components: {},
     mounted: function () {
       this._createMapView();
+
     },
     methods: {
       async _createMapView() {
@@ -26,7 +27,8 @@
           map: map,
           zoom: 5,
         });
-        console.log(view);
+        this.$store.commit('setDefaultMapView', view);
+        console.log(this.$store.getters.getDefaultMapView);
       },
     },
   };

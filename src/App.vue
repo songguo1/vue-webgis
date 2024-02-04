@@ -48,7 +48,6 @@ export default {
       isCollapse: true
     }
   },
-  components: {MapView},
   methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
