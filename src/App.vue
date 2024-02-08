@@ -1,7 +1,7 @@
 <template>
 <el-container>
   <el-header>webgis系统</el-header>
-  <el-container>
+  <el-container class="i">
     <el-aside width="200px">
       <p style="background-color: aliceblue; margin-top: 0;  
   margin-bottom: 0;">菜单栏</p>
@@ -68,7 +68,9 @@ export default {
 
 </script>
 <style>
+    
   .el-container{
+    
     height:100vh
   }
 
