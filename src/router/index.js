@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DataVisual from '../views/DataVisual.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'datavisual',
-    component: DataVisual
+    name: 'Map1',
+    component: ()=> import('../views/MapView1.vue')
   },
   {
-    path: '/onemap',
-    name: 'onemap',
-    component: () => import('../views/OneMap.vue')
+    path: '/Map2',
+    name: 'Map2',
+    component: () => import('../views/MapView2.vue')
   }
 ]
 

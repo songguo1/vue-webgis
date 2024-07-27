@@ -3,8 +3,7 @@
   <el-header>webgis系统</el-header>
   <el-container class="i">
     <el-aside width="200px">
-      <p style="background-color: aliceblue; margin-top: 0;  
-  margin-bottom: 0;">菜单栏</p>
+
     <el-menu
       default-active="1"
       class="el-menu-vertical-demo"
@@ -40,7 +39,6 @@
 </template>
 
 <script>
-import MapView from "./components/MapView.vue"
 export default {
   name: 'App',
   data(){
@@ -58,9 +56,9 @@ export default {
       handleMenuSelect(index) {
       console.log(index);
       if (index === '1') {
-        this.$router.push('/');
+        this.$router.push('/Map1');
       } else if (index === '2') {
-        this.$router.push('/onemap');
+        this.$router.push('/Map2');
       }
     }
   }
